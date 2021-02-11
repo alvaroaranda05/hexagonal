@@ -1,0 +1,33 @@
+## Database
+#spring.jpa.hibernate.ddl-auto: none
+#spring.datasource.url: jdbc:hsqldb:file:addon-db # Use a file-based backing store for HSQL
+spring.application.name: hexagonal
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    initialization-mode: never
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/hexagonal?stringtype=unspecified
+    username: postgres
+    password: postgres
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      poolName: hexagonal
+      maximum-pool-size: 1
+  data:
+    web:
+      pageable:
+        max-page-size: 50
+        page-parameter: page
+        size-parameter: size
+  main:
+    banner-mode: off
+  liquibase:
+    enabled: false
+
+debug: false
+
+server:
+  port: 8080
