@@ -29,11 +29,6 @@ public final class ProjectRepositoryPostgreSql implements ProjectRepository {
     }
 
     @Override
-    public List<Project> searchByCriteria(Criteria criteria) {
-        return null;
-    }
-
-    @Override
     public void remove(ProjectId projectId) {
         projectRepositoryPostgreSqlJpa.deleteById(projectId.getValue());
     }

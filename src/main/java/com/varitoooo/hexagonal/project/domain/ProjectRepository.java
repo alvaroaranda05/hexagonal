@@ -10,7 +10,5 @@ public interface ProjectRepository {
 
     Optional<Project> search(ProjectId projectId);
 
-    List<Project> searchByCriteria(Criteria criteria);
-
     void remove(ProjectId projectId);
 }
