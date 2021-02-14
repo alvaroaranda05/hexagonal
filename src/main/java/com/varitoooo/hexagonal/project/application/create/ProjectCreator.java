@@ -20,7 +20,7 @@ public final class ProjectCreator {
 
         if (existingProject.isPresent()) throw new InvalidEntityException("There is another project with id " + id.getValue());
 
-        Project project = new Project(id, name);
+        Project project = Project.create(id, name);
         projectRepository.save(project);
 
         return project;
